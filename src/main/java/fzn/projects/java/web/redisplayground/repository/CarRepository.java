@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CarRepository extends CrudRepository {
+public interface CarRepository extends CrudRepository<Car, String> {
     List<Car> findByBrand(String brand);
 
     List<Car> findByBrandAndModel(String brand, String model);

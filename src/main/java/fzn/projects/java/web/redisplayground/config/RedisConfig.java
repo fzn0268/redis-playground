@@ -3,7 +3,7 @@ package fzn.projects.java.web.redisplayground.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 public class RedisConfig {
     @Bean
     public RedisConnectionFactory connectionFactory() {
-        return new JedisConnectionFactory();
+        return new LettuceConnectionFactory();
     }
 
     public RedisTemplate<?, ?> redisTemplate(RedisConnectionFactory connectionFactory) {

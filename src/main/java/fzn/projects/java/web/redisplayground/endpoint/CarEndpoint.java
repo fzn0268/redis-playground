@@ -3,8 +3,6 @@ package fzn.projects.java.web.redisplayground.endpoint;
 import fzn.projects.java.web.redisplayground.model.Car;
 import fzn.projects.java.web.redisplayground.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisKeyValueTemplate;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
@@ -16,12 +14,6 @@ public class CarEndpoint {
 
     @Autowired
     private CarRepository repository;
-
-    @Autowired
-    private RedisTemplate template;
-
-    @Autowired
-    private RedisKeyValueTemplate keyValueTemplate;
 
     @POST
     public void postCars(List<Car> cars) {

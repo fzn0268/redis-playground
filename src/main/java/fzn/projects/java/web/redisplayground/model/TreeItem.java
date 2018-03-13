@@ -16,15 +16,12 @@ import static fzn.projects.java.web.redisplayground.model.TreeItem.REDIS_HASH;
 public class TreeItem {
     public static final String REDIS_HASH = "{TreeItem}";
 
-    public static final String TREE_CHILDREN_ID_SET = "{TreeChildrenIdSet}";
+    public static final String NAMESPACE_CHILDREN_ID_SET = "{TreeChildrenIdSet}";
 
     @Getter
     @Setter
     @Id
     private String id;
-
-    @Setter
-    private String parentNameSpace;
 
     @Getter
     @Setter
@@ -39,11 +36,4 @@ public class TreeItem {
     @Getter
     @Setter
     private Map<String, String> payload;
-
-    public String getParentNameSpace() {
-        if (parentNameSpace == null) {
-            return REDIS_HASH;
-        }
-        return parentNameSpace;
-    }
 }

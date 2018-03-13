@@ -2,8 +2,6 @@ package fzn.projects.java.web.redisplayground.repository;
 
 import fzn.projects.java.web.redisplayground.model.TreeItem;
 
-import java.util.List;
-
 public interface CustomTreeRepository {
     void addItem(TreeItem item);
 
@@ -17,7 +15,7 @@ public interface CustomTreeRepository {
 
     Iterable<TreeItem> findChildren(String id);
 
-    String findRootKey(TreeItem item);
+    TreeItem findRoot(TreeItem item);
 
-    String findRootKey(String id);
+    TreeItem findRoot(String id);
 }
